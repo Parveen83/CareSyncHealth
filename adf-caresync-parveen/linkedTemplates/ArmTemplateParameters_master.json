@@ -17,9 +17,6 @@
 		"ls_adls_properties_typeProperties_url": {
 			"value": "https://caresyncadls.dfs.core.windows.net/"
 		},
-		"ls_keyvault_properties_typeProperties_baseUrl": {
-			"value": "https://kv-caresyncparveen.vault.azure.net/"
-		},
 		"ls_azuresqldb_properties_typeProperties_server": {
 			"value": "caresynchealth-server.database.windows.net"
 		},
@@ -28,6 +25,9 @@
 		},
 		"ls_azuresqldb_properties_typeProperties_userName": {
 			"value": "adminparveen"
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://kv-caresyncparveen.vault.azure.net/"
 		},
 		"containerUri": {
 			"value": ""

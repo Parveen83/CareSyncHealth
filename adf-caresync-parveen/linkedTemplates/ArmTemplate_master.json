@@ -23,10 +23,6 @@
 			"type": "string",
 			"defaultValue": "https://caresyncadls.dfs.core.windows.net/"
 		},
-		"ls_keyvault_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://kv-caresyncparveen.vault.azure.net/"
-		},
 		"ls_azuresqldb_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "caresynchealth-server.database.windows.net"
@@ -38,6 +34,10 @@
 		"ls_azuresqldb_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "adminparveen"
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-caresyncparveen.vault.azure.net/"
 		},
 		"containerUri": {
 			"type": "string",
