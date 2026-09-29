@@ -321,7 +321,7 @@
 									"typeProperties": {
 										"variableName": "test",
 										"value": {
-											"value": "@item().table_id",
+											"value": "@string(item().table_id)",
 											"type": "Expression"
 										}
 									}
@@ -367,6 +367,18 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ls_azuresqldb')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
 		}
 	]
 }
