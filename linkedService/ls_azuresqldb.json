@@ -1,0 +1,23 @@
+{
+	"name": "ls_azuresqldb",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "caresynchealth-server.database.windows.net",
+			"database": "db_caresynchealth",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "adminparveen",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_keyvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "azuresqldbpwd"
+			}
+		}
+	}
+}
