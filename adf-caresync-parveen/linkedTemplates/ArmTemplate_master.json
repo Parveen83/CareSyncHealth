@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-caresync-parveen"
 		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0929-165449-ww3hiobf"
+		},
 		"ls_PostgreSql_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "ep-wispy-frost-b37vi36t-pooler.c-4.ap-southeast-1.aws.neon.tech"
@@ -71,6 +75,9 @@
 					},
 					"ls_keyvault_properties_typeProperties_baseUrl": {
 						"value": "[parameters('ls_keyvault_properties_typeProperties_baseUrl')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
 					},
 					"ls_PostgreSql_properties_typeProperties_server": {
 						"value": "[parameters('ls_PostgreSql_properties_typeProperties_server')]"
