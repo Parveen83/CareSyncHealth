@@ -300,7 +300,7 @@
 							"typeProperties": {
 								"variableName": "load_type",
 								"value": {
-									"value": "@activity('Read Table Details').output.firstRow.load_type",
+									"value": "@activity('Read Table Details').output.firstRow.watermark_value",
 									"type": "Expression"
 								}
 							}
