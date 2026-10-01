@@ -71,7 +71,7 @@
 					"source": {
 						"type": "PostgreSqlV2Source",
 						"query": {
-							"value": "SELECT * FROM PUBLIC.@{activity('Read Table Details').output.firstRow.source_table_name}",
+							"value": "SELECT * FROM PUBLIC.@{activity('Read Table Details').output.firstRow.source_table_name}\n@{\n    if(equals(activity('Read Table Details').output.firstRow.load_type,'FULL' ),'' ,concat('where updated_at > '''') )\n }",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00"
@@ -298,7 +298,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "load_type",
+								"variableName": "watermark_value",
 								"value": {
 									"value": "@activity('Read Table Details').output.firstRow.watermark_value",
 									"type": "Expression"
@@ -324,6 +324,9 @@
 				"type": "String"
 			},
 			"load_type": {
+				"type": "String"
+			},
+			"watermark_value": {
 				"type": "String"
 			}
 		},
