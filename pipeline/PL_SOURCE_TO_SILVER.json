@@ -82,6 +82,7 @@
 							"policy": {
 								"secureInput": false
 							},
+							"userProperties": [],
 							"typeProperties": {
 								"pipeline": {
 									"referenceName": "PL_SOURCE_TO_SILVER_INNER",
@@ -126,7 +127,7 @@
 							}
 						},
 						{
-							"name": "Update Failed Status ",
+							"name": "Update Failed Status",
 							"type": "Script",
 							"dependsOn": [
 								{
