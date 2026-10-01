@@ -269,7 +269,7 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "select table_id from ctrl.watermark_column where load_type <> 'FULL'",
+										"value": "select watermark_value from ctrl.watermark where table_id=@{pipeline().parameters.table_id}",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
@@ -278,6 +278,30 @@
 								"dataset": {
 									"referenceName": "ds_azuresqldb",
 									"type": "DatasetReference"
+								}
+							}
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Read watermark",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "load_type",
+								"value": {
+									"value": "@activity('Read Table Details').output.firstRow.load_type",
+									"type": "Expression"
 								}
 							}
 						}
@@ -297,6 +321,9 @@
 		},
 		"variables": {
 			"timestamp": {
+				"type": "String"
+			},
+			"load_type": {
 				"type": "String"
 			}
 		},
