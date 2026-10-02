@@ -544,7 +544,7 @@
 									"typeProperties": {
 										"variableName": "watermark_value",
 										"value": {
-											"value": "@activity('Read watermark').output.variables.watermark_value",
+											"value": "@activity('Read watermark').output.firstRow.watermark_value",
 											"type": "Expression"
 										}
 									}
@@ -591,7 +591,7 @@
 											{
 												"type": "Query",
 												"text": {
-													"value": "update ctrl.watermark \nset watermark_value = SYSUTCDATETIME()\nwhere table_id=@{pipeline().parameters.table_id}",
+													"value": "update ctrl.watermark\nSET watermark_value = CONVERT(varchar(30), SYSUTCDATETIME(), 126)\nwhere table_id=@{pipeline().parameters.table_id}",
 													"type": "Expression"
 												}
 											}
