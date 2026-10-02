@@ -322,7 +322,7 @@
 					},
 					"cases": [
 						{
-							"value": "Case1",
+							"value": "neon_postgres",
 							"activities": [
 								{
 									"name": "source to landing ingestion",
@@ -387,7 +387,7 @@
 							]
 						},
 						{
-							"value": "Case2",
+							"value": "adls_csv",
 							"activities": [
 								{
 									"name": "Ingest CSV from source to landing",
