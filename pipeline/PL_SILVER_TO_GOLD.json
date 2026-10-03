@@ -51,25 +51,6 @@
 					"isSequential": false,
 					"activities": [
 						{
-							"name": "Set variable1",
-							"type": "SetVariable",
-							"state": "Inactive",
-							"onInactiveMarkAs": "Succeeded",
-							"dependsOn": [],
-							"policy": {
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "test",
-								"value": {
-									"value": "@string(item().table_id)",
-									"type": "Expression"
-								}
-							}
-						},
-						{
 							"name": "Insert InProgress status",
 							"type": "Script",
 							"dependsOn": [],
