@@ -1,0 +1,12 @@
+{
+	"name": "adf-caresync-parveen",
+	"properties": {
+		"globalParameters": {
+			"email_receipent": {
+				"type": "string",
+				"value": "star.parveen@gmail.com"
+			}
+		}
+	},
+	"location": "eastus"
+}
