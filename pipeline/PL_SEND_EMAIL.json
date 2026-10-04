@@ -98,7 +98,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "select count(*) from ctrl.audit_log \nwhere adf_run_id = @{pipeline().parameters.adf_run_id}\nand status != 'SUCCESS'",
+							"value": "select count(*) from ctrl.audit_log \nwhere adf_run_id = '@{pipeline().parameters.adf_run_id}'\nand status != 'SUCCESS'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
