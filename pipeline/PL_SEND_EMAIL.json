@@ -170,7 +170,21 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application"
+					},
+					"url": {
+						"value": "@pipeline().globalParameters.logic_app_url",
+						"type": "Expression"
+					},
+					"body": {
+						"value": "@variables('logic_apps_body')",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
