@@ -1,0 +1,78 @@
+{
+	"name": "PL_SEND_EMAIL",
+	"properties": {
+		"activities": [
+			{
+				"name": "Read All tables status",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "select * from ctrl.audit_log where adf_run_id = @{pipeline().parameters.adf_run_id}",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ds_azuresqldb",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "prepare email body header",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "body header",
+					"value": "Ingestion and Transformation for the caresync project has been completed and below is the status"
+				}
+			},
+			{
+				"name": "prepare email body footer",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "body footer",
+					"value": "for any support please reach out to a@gmail.com"
+				}
+			}
+		],
+		"parameters": {
+			"adf_run_id": {
+				"type": "string",
+				"defaultValue": "a1"
+			}
+		},
+		"variables": {
+			"body header": {
+				"type": "String"
+			},
+			"body footer": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
