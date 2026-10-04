@@ -1,1 +1,14 @@
-{}
+{
+	"email_receipent": {
+		"type": "string",
+		"value": "star.parveen@gmail.com"
+	},
+	"env": {
+		"type": "string",
+		"value": "ENV"
+	},
+	"logic_app_url": {
+		"type": "string",
+		"value": "abc.com"
+	}
+}
